@@ -34,13 +34,29 @@ ShippingCostStrategy can have Standard, Express and International implementation
 
 Explain the design in two minutes. Draw the key classes and one sequence. Then answer: what can change, what can fail, and what must remain true when two requests arrive together?
 
-## 6. C++ implementation hints
+## 6. Java implementation example
 
-- Use enum class for finite states and clear domain types for identifiers and money.
-- Use RAII and smart pointers according to ownership; do not use shared_ptr by default.
-- Inject dependencies through constructors instead of relying on global state.
-- Protect the complete logical operation when shared mutable state is involved.
-- Test normal flow, invalid input, boundaries and failure handling.
+Java is used for the implementation examples in this study library. Prefer interfaces for variable behaviour, constructor injection for dependencies, enums for finite states, and immutable value objects where practical.
 
+```java
+// Define a small contract for the behaviour that may vary.
+interface Operation {
+    void execute();
+}
+
+class ApplicationService {
+    private final Operation operation;
+
+    ApplicationService(Operation operation) {
+        this.operation = operation;
+    }
+
+    void run() {
+        operation.execute();
+    }
+}
+```
+
+The application service depends on an abstraction, not a concrete implementation. In a real solution, replace `Operation` with the topic-specific interface and provide the appropriate implementation. Use Java collections, exceptions and concurrency utilities where they make the design clearer; avoid introducing patterns without a requirement.
 ---
 *LLD Study Library · Author: Jayesh Sharma*
