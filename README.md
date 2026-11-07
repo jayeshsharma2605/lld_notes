@@ -41,7 +41,7 @@ Diagrams use Mermaid. GitHub renders Mermaid blocks directly. If viewing locally
 
 ## Language
 
-The source playlist examples are primarily Java-oriented. The notes focus on language-independent design and use C++-friendly terminology/examples where useful. The same object model can be implemented in Java, C++, C# or Python.
+The notes use Java for implementation examples, with language-independent design explanations and UML/flowcharts. Examples use standard Java interfaces, classes, collections and concurrency utilities.
 
 ## Source
 
