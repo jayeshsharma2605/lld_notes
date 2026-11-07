@@ -27,6 +27,10 @@ A structured set of beginner-friendly notes based on the first **43 videos** of 
 | [06 — Interview Playbook](06-interview-playbook/README.md) | Requirement checklist, design sequence, review checklist, questions |
 | [Video Index](VIDEO_INDEX.md) | Mapping of playlist videos 1–43 to these notes |
 
+## Individual lesson notes
+
+The playlist is also documented lesson by lesson, with a separate Markdown file for each of the first 43 videos: [Open the 43 individual series notes](series/README.md).
+
 ## Learning path
 
 `Requirements → Use cases → Entities → Responsibilities → Relationships → Interfaces → Interactions → Edge cases → Tests`
