@@ -32,12 +32,22 @@ For editor undo, consider snapshot memory cost, immutable snapshots, deltas, che
 
 Explain the design in two minutes. Draw the key classes and one sequence. State one trade-off and one test for an edge case.
 
-## 6. C++ implementation hints
+## 6. Java implementation example
 
-- Use RAII and smart pointers according to ownership.
-- Inject dependencies through constructors instead of relying on global state.
-- Use const-correct interfaces and explicit state types.
-- Test normal flow, invalid input, boundaries and failure handling.
+Use Java interfaces for variable behaviour, constructor injection for dependencies, enums for finite states, and immutable value objects where practical.
 
+```java
+interface Operation {
+    void execute();
+}
+
+class ApplicationService {
+    private final Operation operation;
+    ApplicationService(Operation operation) { this.operation = operation; }
+    void run() { operation.execute(); }
+}
+```
+
+The service depends on an abstraction rather than a concrete implementation. In a real solution, replace `Operation` with the topic-specific interface and supply the required implementation. Use Java collections, exceptions and concurrency utilities where they improve clarity; do not introduce patterns without a requirement.
 ---
 *LLD Study Library · Author: Jayesh Sharma*
